@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface BookServices {
     Book findBookById(String id);
-    List<SearchResult> findAllBooks();
+    List<Book> search(String keyword);
 }

@@ -8,6 +8,7 @@ import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
+
 public class ApiResponse {
     private List<SearchResult> items = new ArrayList<>();
 }

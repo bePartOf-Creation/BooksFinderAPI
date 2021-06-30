@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Books</title>
+    <link rel="stylesheet" th:href="@{/assets/css/all.css}" />
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" />
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class=" book_container">
+        <div class="book-layout" th:each="book : ${bookLists}">
+            <div class="flex-up">
+                <img th:src="*{book.getThumbnail()}" class="book-img" width="350px" alt="" src=""/>
+                <div class="book_details">
+                    <a href=""><h2 class="book_title" th:text="*{book.getTitle()}"></h2></a>
+                    <p class="book-subtitle" th:text="*{book.getSubtitle()}"></p>
+                    <div class="author_details">
+                        <p class="author" th:text="*{book.getAuthors()}"></p>
+                        <p class="publisher" th:text="*{book.getPublisher()}">Published by </p>
+                    </div>
+                    <small class="book-description" th:text="*{book.getDescription()}"></small>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+</html>

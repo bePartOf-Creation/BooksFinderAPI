@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+}
+
+.headline{
+    color:white;
+    font-size:2rem;
+}
+
+body{
+    box-sizing: border-box; 
+    height: 100vh;
+}
+
+.index_container{
+    display: flex;
+    height: 99vh;
+    background-image:url("/assets/img/lib.jpg");
+    background-size: cover;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+}
+.index_header_text{
+    justify-content: center;
+    align-items: center;
+}
+.headline{
+    text-align: center;
+    font-weight: bold;
+    color:#3a8253;
+}
+.search-bar{
+    display: flex;
+    flex-direction: column;
+}
+.dex{
+    color: white;
+}
+
