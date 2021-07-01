@@ -3,6 +3,7 @@ package com.lms.application.web.controller;
 import com.lms.application.data.models.Book;
 import com.lms.application.service.BookServices;
 
+import com.lms.application.web.exceptions.BookNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +33,12 @@ public class BookController {
     @GetMapping(path = "/search")
     public String searchBooks(Model model,@RequestParam("keyword") String keyword) {
 
-        List<Book> bookList = bookServices.search(keyword);
+        List<Book> bookList = null;
+        try {
+            bookList = bookServices.search(keyword);
+        } catch (BookNotFoundException e) {
+            e.printStackTrace();
+        }
         model.addAttribute("bookLists", bookList);
         return "allbooks";
 

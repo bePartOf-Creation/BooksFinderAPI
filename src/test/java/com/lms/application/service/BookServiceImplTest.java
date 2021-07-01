@@ -2,6 +2,7 @@ package com.lms.application.service;
 
 import com.lms.application.data.models.Book;
 import com.lms.application.data.models.SearchResult;
+import com.lms.application.web.exceptions.BookNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,7 +33,7 @@ class BookServiceImplTest {
     }
 
     @Test
-    void search() {
+    void search() throws BookNotFoundException {
 
             List<Book> books = bookServices.search("The Google Book");
             assertThat(books).isNotNull();
