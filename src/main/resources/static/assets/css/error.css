@@ -1,0 +1,48 @@
+*{
+    /*padding: 0;*/
+}
+
+body{
+    box-sizing: border-box;
+    height: 100vh;
+    background: #a9425e;
+    padding: 5rem 14rem;
+}
+
+.error_container{
+    display: flex;
+    width: 70vw;
+
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.err-text{
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.err-imgs{
+    width: 45vw;
+    display: flex;
+}
+
+.txt{
+    font-size: 40px;
+    color:#a9425e;
+    font-family: cursive;
+}
+.msg{
+    font-weight: bold;
+}
+.back_home button{
+    padding: 1rem;
+    background: #a9425e;
+    border-radius: .8rem;
+    font-family: monospace;
+    font-weight: bold;
+    color: aliceblue;
+}

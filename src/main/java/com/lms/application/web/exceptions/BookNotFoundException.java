@@ -8,11 +8,4 @@ public class BookNotFoundException extends Exception {
         super(message);
     }
 
-    public BookNotFoundException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public BookNotFoundException(Throwable cause) {
-        super(cause);
-    }
 }

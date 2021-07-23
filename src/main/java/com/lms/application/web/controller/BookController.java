@@ -2,44 +2,39 @@ package com.lms.application.web.controller;
 
 import com.lms.application.data.models.Book;
 import com.lms.application.service.BookServices;
-
 import com.lms.application.web.exceptions.BookNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-
-import javax.validation.Valid;
 import java.util.List;
 
 @Controller
 @Slf4j
-@RequestMapping(path = "")
+@RequestMapping("/")
 public class BookController {
 
     @Autowired
     private BookServices bookServices;
 
-    private final String url = "https://www.googleapis.com/books/v1/volumes?q=quilting";
-
-    @GetMapping(path = "/")
+    @GetMapping("/index")
     public String getIndex(){
         return "index";
     }
 
-    @GetMapping(path = "/search")
+    @GetMapping("/search")
     public String searchBooks(Model model,@RequestParam("keyword") String keyword) {
 
-        List<Book> bookList = null;
+        List<Book> bookList;
         try {
             bookList = bookServices.search(keyword);
+            model.addAttribute("bookLists", bookList);
         } catch (BookNotFoundException e) {
-            e.printStackTrace();
+           return "error";
         }
-        model.addAttribute("bookLists", bookList);
+
         return "allbooks";
 
     }
